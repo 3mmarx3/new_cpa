@@ -12,6 +12,7 @@ body {
     margin: 20px auto 0;
     max-width: 430px;
   animation: fadeIn 0.5s ease-in-out;
+  padding: 25px;
 }
 
 .header {
@@ -139,16 +140,18 @@ img:hover {
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
-
 .final-screen {
   display: none;
+  text-align: center;
+  background: #3b82f60f;
+  border-radius: 20px;
   margin-top: 30px;
   font-size: 20px;
-  font-weight: bold;
   line-height: 1.5;
-  padding: 10px;
+  padding: 30px 20px;
   animation: fadeIn 0.5s ease-in-out;
 }
+
 
 .final-text-1, .final-text-2, .cta-btn {
   display: none;
@@ -212,4 +215,8 @@ text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+div#q4 .question-text ,div#q1 .question-text {
+    font-size: larger;
 }

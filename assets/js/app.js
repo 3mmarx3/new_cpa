@@ -46,7 +46,6 @@ function finishQuiz() {
   const loading1 = document.getElementById("loading1");
   const loading2 = document.getElementById("loading2");
   const final = document.getElementById("final");
-  const finalText1 = document.getElementById("finalText1");
   const finalText2 = document.getElementById("finalText2");
   const ctaBtn = document.getElementById("ctaBtn");
 
@@ -60,14 +59,9 @@ function finishQuiz() {
       if (loading2) loading2.style.display = "none";
       if (final) final.style.display = "block";
 
-      if (finalText1) finalText1.style.display = "block";
-
-      setTimeout(() => {
-        if (finalText1) finalText1.style.display = "none";
-        if (finalText2) finalText2.style.display = "block";
-        if (ctaBtn) ctaBtn.style.display = "inline-block";
-        updateAllFlexHeights();
-      }, 2000);
+      if (finalText2) finalText2.style.display = "block";
+      if (ctaBtn) ctaBtn.style.display = "inline-block";
+      updateAllFlexHeights();
 
     }, 2000);
 

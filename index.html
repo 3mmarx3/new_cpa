@@ -25,12 +25,13 @@
 
     <div class="flex">
             <div id="q1" class="question-box">
-      <div class="question-text">Where do you live?</div>
-      <div class="answers block">
-        <button onclick="nextQuestion()">Egypt</button>
-        <button onclick="nextQuestion()">Outside Egypt</button>
-      
-      </div>
+      <div class="question-text">Which city are you from?</div>
+ <div class="answers block">
+  <button onclick="nextQuestion()">Egypt</button>
+
+  <button onclick="nextQuestion()">Tokyo</button>
+</div>
+
     </div>
 
     </div>
@@ -51,8 +52,10 @@
     </div>
 
     <div id="q3" class="question-box">
+              <div class="question-text">Can you see the right number ?</div>
+
       <div class="img-box" style="background-image: url(./assets/img/three.webp);"></div>
-      <div class="question-text">Pick your answer:</div>
+      <div class="question-text">Pick your answer :</div>
       <div class="answers">
         <button onclick="nextQuestion()">1392</button>
         <button onclick="nextQuestion()">4480</button>
@@ -65,16 +68,16 @@
 
 <div class="flex">
 
+<div id="q4" class="question-box">
+  <div class="question-text">How many animals are in this picture?</div>
+  <div class="answers block">
+    <button onclick="finishQuiz()">3</button>
+    <button onclick="finishQuiz()">5</button>
+    <button onclick="finishQuiz()">7</button>
 
-    <div id="q4" class="question-box">
-      <div class="question-text">How many animals do you see?</div>
-      <div class="answers block">
+  </div>
+</div>
 
-
-               <button onclick="finishQuiz()">Egypt</button>
-        <button onclick="finishQuiz()">Outside Egypt</button>
-      </div>
-    </div>
 
 </div>
 
@@ -84,20 +87,24 @@
       <div class="loader"></div>
     </div>
 
-    <div id="loading2" class="loading-screen">
+ <div class="flex">
+     <div id="loading2" class="loading-screen">
       Checking your eligibility...
       <div class="loader"></div>
     </div>
 
+ </div>
     <!-- Final Screen -->
     <div id="final" class="final-screen">
-      <div id="finalText1" class="final-text-1">Your chance of being selected is <b>97%</b>!</div>
       <div id="finalText2" class="final-text-2">
         You're almost there — keep this page open.<br>
         Click "Receive my check" below and complete the final survey.<br>
         We'll contact you shortly after you submit — don't miss your chance!
       </div>
-      <button id="ctaBtn" class="cta-btn" onclick="alert('Redirect to survey')">Receive my check</button>
+<a href="#">
+        <button id="ctaBtn" class="cta-btn" onclick="alert('Redirect to survey')">Receive my check</button>
+
+</a>
     </div>
 
   </div>
