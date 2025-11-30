@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IQverse</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="back" onclick="prevQuestion()"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="13" fill="none" class="style_icon__5pKWM"><path fill="#2D2D2D" d="M19.945 5.452H3.61l3.7-3.66A1.044 1.044 0 0 0 7.313.308 1.06 1.06 0 0 0 5.82.305L.311 5.757a1.045 1.045 0 0 0-.002 1.485l5.512 5.453a1.06 1.06 0 0 0 1.492-.004c.41-.41.409-1.074-.004-1.482l-3.7-3.66h16.336c.583 0 1.055-.47 1.055-1.049s-.472-1.048-1.055-1.048Z"></path></svg></div>
+      <div class="title logo"></div>
+      <div id="counter">1/4</div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Questions -->
+
+    <div class="flex">
+            <div id="q1" class="question-box">
+      <div class="question-text">Where do you live?</div>
+      <div class="answers block">
+        <button onclick="nextQuestion()">Egypt</button>
+        <button onclick="nextQuestion()">Outside Egypt</button>
+      
+      </div>
+    </div>
+
+    </div>
+
+    <div id="q2" class="question-box">
+              <div class="question-text">Can you see the right number ?</div>
+
+      <div class="img-box" style="background-image: url(./assets/img/tow.webp);"></div>
+      <div class="question-text">Pick your answer :</div>
+      <div class="answers">
+        <button onclick="nextQuestion()">22</button>
+        <button onclick="nextQuestion()">54</button>
+        <button onclick="nextQuestion()">53</button>
+        <button onclick="nextQuestion()">43</button>
+        <button onclick="nextQuestion()">42</button>
+        <button onclick="nextQuestion()">32</button>
+      </div>
+    </div>
+
+    <div id="q3" class="question-box">
+      <div class="img-box" style="background-image: url(./assets/img/three.webp);"></div>
+      <div class="question-text">Pick your answer:</div>
+      <div class="answers">
+        <button onclick="nextQuestion()">1392</button>
+        <button onclick="nextQuestion()">4480</button>
+        <button onclick="nextQuestion()">0190</button>
+        <button onclick="nextQuestion()">8831</button>
+        <button onclick="nextQuestion()">1490</button>
+        <button onclick="nextQuestion()">3071</button>
+      </div>
+    </div>
+
+<div class="flex">
+
+
+    <div id="q4" class="question-box">
+      <div class="question-text">How many animals do you see?</div>
+      <div class="answers block">
+
+
+               <button onclick="finishQuiz()">Egypt</button>
+        <button onclick="finishQuiz()">Outside Egypt</button>
+      </div>
+    </div>
+
+</div>
+
+    <!-- Loading Screens -->
+    <div id="loading1" class="loading-screen">
+      Reviewing your answers...
+      <div class="loader"></div>
+    </div>
+
+    <div id="loading2" class="loading-screen">
+      Checking your eligibility...
+      <div class="loader"></div>
+    </div>
+
+    <!-- Final Screen -->
+    <div id="final" class="final-screen">
+      <div id="finalText1" class="final-text-1">Your chance of being selected is <b>97%</b>!</div>
+      <div id="finalText2" class="final-text-2">
+        You're almost there — keep this page open.<br>
+        Click "Receive my check" below and complete the final survey.<br>
+        We'll contact you shortly after you submit — don't miss your chance!
+      </div>
+      <button id="ctaBtn" class="cta-btn" onclick="alert('Redirect to survey')">Receive my check</button>
+    </div>
+
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+  
+  
+</body>
+</html>
