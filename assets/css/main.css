@@ -80,7 +80,7 @@ img:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   margin-top: 20px;
-  width: 352px;
+
 }
 
 .answers button {
@@ -221,4 +221,11 @@ img:hover {
 div#q4 .question-text,
 div#q1 .question-text {
   font-size: larger;
+}
+
+
+.text {
+    text-align: center;
+
+    padding: 10px;
 }
