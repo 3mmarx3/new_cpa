@@ -229,3 +229,10 @@ div#q1 .question-text {
 
     padding: 10px;
 }
+
+.text h2 {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    font-size: larger;
+}
+
