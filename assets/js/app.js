@@ -1,73 +1,43 @@
 let index = 1;
+const get = (id) => document.getElementById(id);
+const query = (s) => document.querySelectorAll(s);
 
-function updateAllFlexHeights() {
-  const flexContainers = document.querySelectorAll('.flex');
-  flexContainers.forEach(flex => {
-    const hasVisibleChildren = Array.from(flex.children).some(child => child.offsetParent !== null);
-    flex.style.height = hasVisibleChildren ? '75vh' : 'auto';
-  });
-}
+const updateHeight = () => query('.flex').forEach(flex => 
+  flex.style.height = [...flex.children].some(c => c.offsetParent) ? '75vh' : 'auto'
+);
 
-function showQuestion() {
-  document.querySelectorAll(".question-box").forEach(q => q.style.display = "none");
-  const q = document.getElementById("q" + index);
-  if (!q) return;
-  q.style.display = "block";
-  q.style.opacity = 0;
-  setTimeout(() => { q.style.opacity = 1; }, 50);
-
-  const counter = document.getElementById("counter");
-  if (counter) counter.innerText = index + "/4";
-
-  const progressBar = document.getElementById("progressBar");
-  if (progressBar) progressBar.style.width = (index / 4) * 100 + "%";
-
-  updateAllFlexHeights();
-}
-
-function nextQuestion() {
-  if (index < 4) {
-    index++;
-    showQuestion();
+const showQuestion = () => {
+  query(".question-box").forEach(q => q.style.display = "none");
+  const q = get("q" + index);
+  if (q) {
+    q.style.display = "block";
+    setTimeout(() => q.style.opacity = 1, 50);
+    get("counter").innerText = `${index}/4`;
+    get("progressBar").style.width = `${index * 25}%`;
   }
-}
+  updateHeight();
+};
 
-function prevQuestion() {
-  if (index > 1) {
-    index--;
-    showQuestion();
-  }
-}
+const nextQuestion = () => index < 4 && (++index, showQuestion());
+const prevQuestion = () => index > 1 && (--index, showQuestion());
 
-function finishQuiz() {
-  document.querySelectorAll(".question-box").forEach(q => q.style.display = "none");
-  updateAllFlexHeights();
+const finishQuiz = async () => {
+  query(".question-box").forEach(q => q.style.display = "none");
+  updateHeight();
 
-  const loading1 = document.getElementById("loading1");
-  const loading2 = document.getElementById("loading2");
-  const final = document.getElementById("final");
-  const finalText2 = document.getElementById("finalText2");
-  const ctaBtn = document.getElementById("ctaBtn");
+  const delay = (ms) => new Promise(res => setTimeout(res, ms));
+  const playStep = async (id) => {
+    get(id).style.display = "block";
+    await delay(2000);
+    get(id).style.display = "none";
+  };
 
-  if (loading1) loading1.style.display = "block";
+  await playStep("loading1");
+  await playStep("loading2");
 
-  setTimeout(() => {
-    if (loading1) loading1.style.display = "none";
-    if (loading2) loading2.style.display = "block";
+  ["final", "finalText2"].forEach(id => get(id).style.display = "block");
+  get("ctaBtn").style.display = "inline-block";
+  updateHeight();
+};
 
-    setTimeout(() => {
-      if (loading2) loading2.style.display = "none";
-      if (final) final.style.display = "block";
-
-      if (finalText2) finalText2.style.display = "block";
-      if (ctaBtn) ctaBtn.style.display = "inline-block";
-      updateAllFlexHeights();
-
-    }, 2000);
-
-  }, 2000);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  showQuestion();
-});
+document.addEventListener("DOMContentLoaded", showQuestion);
